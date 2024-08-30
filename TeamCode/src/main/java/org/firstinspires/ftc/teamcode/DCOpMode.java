@@ -7,7 +7,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 // annotation used to differentiate TeleOp and Auto modes
 // (i guess it just mainly changes the tab it appears in on the controller??)
 @TeleOp
-public class OpMode extends LinearOpMode {
+public class DCOpMode extends LinearOpMode {
     // ** add private variables/robo parts later
     // placeholder robo parts for now
     // (F = Front, B = Back, L = Left, R = Right, W = Wheel)
