@@ -3,6 +3,8 @@ package org.firstinspires.ftc.teamcode;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.Gamepad;
+import com.qualcomm.robotcore.hardware.Servo;
 
 // annotation used to differentiate TeleOp and Auto modes
 // (i guess it just mainly changes the tab it appears in on the controller??)
@@ -10,14 +12,18 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 public class DCOpMode extends LinearOpMode {
     // ** add private variables/robo parts later
     // placeholder robo parts for now
+
+    // wheel parts
     // (F = Front, B = Back, L = Left, R = Right, W = Wheel)
     private DcMotor FLW;
     private DcMotor FRW;
     private DcMotor BLW;
     private DcMotor BRW;
 
-    private DcMotor ArmL;
-    private DcMotor ArmR;
+    // arm parts
+    private DcMotor OuttakeArm;
+    private DcMotor IntakeArm;
+    private Servo ClawTilt;
 
     @Override
     public void runOpMode() {
@@ -31,8 +37,9 @@ public class DCOpMode extends LinearOpMode {
         BRW = hardwareMap.get(DcMotor.class, "BRW");
 
         // arm config
-        ArmL = hardwareMap.get(DcMotor.class,"ArmL");
-        ArmR = hardwareMap.get(DcMotor.class,"ArmR");
+        OuttakeArm = hardwareMap.get(DcMotor.class,"OuttakeArm");
+        IntakeArm = hardwareMap.get(DcMotor.class,"IntakeArm");
+        ClawTilt = hardwareMap.get(Servo.class,"ClawTilt");
 
         telemetry.addData("Status", "Initialized");
         telemetry.update();
@@ -44,35 +51,36 @@ public class DCOpMode extends LinearOpMode {
         while (opModeIsActive()) {
             // while opMode is running, allow the methods for manipulating the wheels and arms
             // to be used and print data values
-            moveWheels();
-            moveArm();
+            moveWheels(gamepad1);
+            moveArm(gamepad2);
 
             telemetry.addData("FLW Motor Power", FLW.getPower());
             telemetry.addData("FRW Motor Power", FRW.getPower());
             telemetry.addData("BLW Motor Power", BLW.getPower());
             telemetry.addData("BRW Motor Power", BRW.getPower());
 
-            telemetry.addData("ArmL Motor Power", ArmL.getPower());
-            telemetry.addData("ArmR Motor Power", ArmR.getPower());
+            telemetry.addData("Outtake Arm Motor Power", OuttakeArm.getPower());
+            telemetry.addData("Intake Arm Motor Power", IntakeArm.getPower());
+            telemetry.addData("Outtake Claw Servo Position", ClawTilt.getPosition());
 
             telemetry.addData("Status", "Running");
             telemetry.update();
         }
     }
 
-    public void moveWheels(){
+    public void moveWheels(Gamepad movepad){
         double drivePower = 0;
         double strafePower = 0;
         double turnPower = 0;
 
         // moves the robot's (wheel) motors forward and back using the game pad 1 left joystick
-        drivePower = -this.gamepad1.left_stick_y;
+        drivePower = -movepad.left_stick_y;
 
         // moves the robot's (wheel) motors left and right using the game pad 1 left joystick
-        strafePower = this.gamepad1.left_stick_x;
+        strafePower = movepad.left_stick_x;
 
         // turns the robot's (wheel) motors left and right using the game pad 1 right joystick
-        turnPower = this.gamepad1.right_stick_x;
+        turnPower = movepad.right_stick_x;
 
         // power supply for driving, strafing and turning (sometimes simultaneously)
         // im not exactly sure if this will work, i just copied it from last year's code. so yeah
@@ -157,14 +165,43 @@ public class DCOpMode extends LinearOpMode {
         */
     }
 
-    public void moveArm(){
+    public void moveArm(Gamepad armpad){
+        // presets servo position
+        ClawTilt.setPosition(0);
+
         // powers the robot's (arm) motors using the game pad 2 left joystick
         // (this will make the arm's motor power vary depending on how much you're using the joystick.
         // this can be changed later if we want the motor to have a constant power no matter what
         // value the joystick is giving)
-        if(this.gamepad2.left_stick_y != 0){
-            ArmL.setPower(-this.gamepad2.left_stick_y);
-            ArmR.setPower(-this.gamepad2.left_stick_y);
+        // linear slide(s) for outtake arm
+        // (provides a threshold for deactivating motor power since joystick may not be at exactly 0)
+        if(armpad.left_stick_y > 0.25 || armpad.left_stick_y < -0.25) {
+            OuttakeArm.setPower(-armpad.left_stick_y);
+        } else {
+            OuttakeArm.setPower(0);
+        }
+
+        // uses the gamepad's X button as a switch to tilt and un-tilt the outtake's "claw's" bucket
+        if(armpad.x) {
+            if(ClawTilt.getPosition() < 0.5) {
+                ClawTilt.setPosition(1);
+            } else {
+                ClawTilt.setPosition(0);
+            }
+        }
+
+        // same logic for intake and outtake linear slides
+        if(armpad.right_stick_y > 0.25 || armpad.right_stick_y < -0.25) {
+            IntakeArm.setPower(-armpad.left_stick_y);
+        } else {
+            IntakeArm.setPower(0);
+        }
+
+        // ***** add button for intake claw servos
+
+        // pressing the triangle to trigger whatever actions will happen to hang/climb
+        if(armpad.triangle) {
+            // trigger hanging maneuver
         }
     }
 }
