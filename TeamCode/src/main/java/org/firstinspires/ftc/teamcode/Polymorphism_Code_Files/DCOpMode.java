@@ -23,7 +23,8 @@ public class DCOpMode extends LinearOpMode {
     // arm parts
     private DcMotor OuttakeArm;
     private DcMotor IntakeArm;
-    private Servo ClawTilt;
+    private Servo OutClaw;
+    private Servo InClaw;
 
     @Override
     public void runOpMode() {
@@ -39,7 +40,8 @@ public class DCOpMode extends LinearOpMode {
         // arm config
         OuttakeArm = hardwareMap.get(DcMotor.class,"OuttakeArm");
         IntakeArm = hardwareMap.get(DcMotor.class,"IntakeArm");
-        ClawTilt = hardwareMap.get(Servo.class,"ClawTilt");
+        OutClaw = hardwareMap.get(Servo.class,"OutClaw");
+        InClaw = hardwareMap.get(Servo.class,"InClaw");
 
         telemetry.addData("Status", "Initialized");
         telemetry.update();
@@ -61,7 +63,8 @@ public class DCOpMode extends LinearOpMode {
 
             telemetry.addData("Outtake Arm Motor Power", OuttakeArm.getPower());
             telemetry.addData("Intake Arm Motor Power", IntakeArm.getPower());
-            telemetry.addData("Outtake Claw Servo Position", ClawTilt.getPosition());
+            telemetry.addData("Outtake Claw Servo Position", OutClaw.getPosition());
+            telemetry.addData("Intake Claw Servo Position", InClaw.getPosition());
 
             telemetry.addData("Status", "Running");
             telemetry.update();
@@ -168,8 +171,9 @@ public class DCOpMode extends LinearOpMode {
 
     public void moveArm(Gamepad armpad){
         // ** the functions below are for the polymorphism bot **
-        // presets servo position
-        ClawTilt.setPosition(0);
+        // presets servo positions
+        OutClaw.setPosition(0);
+        InClaw.setPosition(0);
 
         // powers the robot's (arm) motors using the game pad 2 left joystick
         // (this will make the arm's motor power vary depending on how much you're using the joystick.
@@ -183,15 +187,6 @@ public class DCOpMode extends LinearOpMode {
             OuttakeArm.setPower(0);
         }
 
-        // uses the gamepad's X button as a switch to tilt and un-tilt the outtake's "claw's" bucket
-        if(armpad.x) {
-            if(ClawTilt.getPosition() < 0.5) {
-                ClawTilt.setPosition(1);
-            } else {
-                ClawTilt.setPosition(0);
-            }
-        }
-
         // same logic for intake and outtake linear slides
         if(armpad.right_stick_y > 0.25 || armpad.right_stick_y < -0.25) {
             IntakeArm.setPower(-armpad.left_stick_y);
@@ -199,7 +194,25 @@ public class DCOpMode extends LinearOpMode {
             IntakeArm.setPower(0);
         }
 
-        // ***** add button for intake claw servos
+        // uses the gamepad's X button as a switch to tilt and un-tilt the outtake's "claw's" bucket
+        // (1 = tilt, 0 = not tilt)
+        if(armpad.x) {
+            if(OutClaw.getPosition() < 0.5) {
+                OutClaw.setPosition(1);
+            } else {
+                OutClaw.setPosition(0);
+            }
+        }
+
+        // uses the gamepad's circle button as a switch to open and unopen the intake's claw
+        // (1 = open, 0 = closed)
+        if(armpad.circle) {
+            if(InClaw.getPosition() < 0.5) {
+                InClaw.setPosition(1);
+            } else {
+                InClaw.setPosition(0);
+            }
+        }
 
         // pressing the triangle to trigger whatever actions will happen to hang/climb
         if(armpad.triangle) {
