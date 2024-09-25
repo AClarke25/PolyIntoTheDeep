@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode;
+package org.firstinspires.ftc.teamcode.Polymorphism_Code_Files;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
@@ -69,6 +69,7 @@ public class DCOpMode extends LinearOpMode {
     }
 
     public void moveWheels(Gamepad movepad){
+        // ** the functions below could be for any bot, depending on what controls you want to use to drive the bot **
         double drivePower = 0;
         double strafePower = 0;
         double turnPower = 0;
@@ -166,6 +167,7 @@ public class DCOpMode extends LinearOpMode {
     }
 
     public void moveArm(Gamepad armpad){
+        // ** the functions below are for the polymorphism bot **
         // presets servo position
         ClawTilt.setPosition(0);
 
