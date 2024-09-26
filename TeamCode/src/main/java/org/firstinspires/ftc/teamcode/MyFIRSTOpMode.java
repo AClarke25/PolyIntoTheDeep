@@ -6,11 +6,11 @@ import com.qualcomm.robotcore.hardware.*;
 @TeleOp
 public class MyFIRSTOpMode extends LinearOpMode {
 
-    double tgtPower = 0;
-    private DcMotor FLW;
-    private DcMotor BLW;
-    private DcMotor FRW;
-    private DcMotor BRW;
+    static double tgtPower = 0;
+    static private DcMotor FLW;
+    static private DcMotor BLW;
+    static private DcMotor FRW;
+    static private DcMotor BRW;
 
 
 
@@ -28,20 +28,43 @@ public class MyFIRSTOpMode extends LinearOpMode {
 
         // run until the end of the match (driver presses STOP)
         while (opModeIsActive()) {
+
+
             telemetry.addData("Status", "Running");
             telemetry.update();
             tgtPower = this.gamepad1.left_stick_y;
-            FLW.setPower(-tgtPower);
-            BLW.setPower(-tgtPower);
-            FRW.setPower(tgtPower);
-            BRW.setPower(tgtPower);
-            telemetry.addData("Target Power", tgtPower);
-            telemetry.addData("FLW Power", FLW.getPower());
-            telemetry.addData("BLW Power", BLW.getPower());
-            telemetry.addData("FRW Power", FRW.getPower());
-            telemetry.addData("BRW Power", BRW.getPower());
-            telemetry.addData("Status", "Running");
-            telemetry.update();
+
+
+            if(gamepad1.left_stick_x < 0.5 && gamepad1.left_stick_x > -0.5) {
+                //forward and backwards
+                FLW.setPower(-tgtPower);
+                BLW.setPower(-tgtPower);
+                FRW.setPower(tgtPower);
+                BRW.setPower(tgtPower);
+            } else if (gamepad1.left_stick_y < .5 && gamepad1.right_bumper) {
+                
+            } else {
+                disablePower();
+            }
+            updatePhoneConsole();
         }
     }
+
+    public static void disablePower() {
+        FLW.setPower(0);
+        BLW.setPower(0);
+        FRW.setPower(0);
+        BRW.setPower(0);
+    }
+
+    public void updatePhoneConsole() {
+        telemetry.addData("Target Power", tgtPower);
+        telemetry.addData("FLW Power", FLW.getPower());
+        telemetry.addData("BLW Power", BLW.getPower());
+        telemetry.addData("FRW Power", FRW.getPower());
+        telemetry.addData("BRW Power", BRW.getPower());
+        telemetry.addData("Status", "Running");
+        telemetry.update();
+    }
+
 }
