@@ -1,8 +1,7 @@
-package org.firstinspires.ftc.teamcode;
+package org.firstinspires.ftc.teamcode.Polymorphism;
 
 //test test
 // test test test
-//wend goated
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
@@ -29,7 +28,6 @@ public class DCOpMode extends LinearOpMode {
     private DcMotor IntakeArm;
     private Servo OutClaw;
     private Servo InClaw;
-
 
     @Override
     public void runOpMode() {
