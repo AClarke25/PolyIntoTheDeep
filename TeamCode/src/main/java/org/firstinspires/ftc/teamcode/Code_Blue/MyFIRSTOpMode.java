@@ -7,6 +7,7 @@ import com.qualcomm.robotcore.hardware.*;
 public class MyFIRSTOpMode extends LinearOpMode {
 
     static double tgtPower = 0;
+    static double tgtPowerLR
     static private DcMotor FLW;
     static private DcMotor BLW;
     static private DcMotor FRW;
@@ -42,7 +43,7 @@ public class MyFIRSTOpMode extends LinearOpMode {
                 FRW.setPower(tgtPower);
                 BRW.setPower(tgtPower);
             } else if (gamepad1.left_stick_y < .5 && gamepad1.right_bumper) {
-                
+                FLW.setPower()
             } else {
                 disablePower();
             }
