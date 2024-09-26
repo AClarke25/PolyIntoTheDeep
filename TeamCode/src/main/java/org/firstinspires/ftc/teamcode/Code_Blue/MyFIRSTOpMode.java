@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode;
+package org.firstinspires.ftc.teamcode.Code_Blue;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.*;
@@ -7,12 +7,11 @@ import com.qualcomm.robotcore.hardware.*;
 public class MyFIRSTOpMode extends LinearOpMode {
 
     static double tgtPower = 0;
-    static double tgtPowerLR
     static private DcMotor FLW;
     static private DcMotor BLW;
     static private DcMotor FRW;
     static private DcMotor BRW;
-
+    static double tgtPower2 = 0;
 
 
     @Override
@@ -34,16 +33,20 @@ public class MyFIRSTOpMode extends LinearOpMode {
             telemetry.addData("Status", "Running");
             telemetry.update();
             tgtPower = this.gamepad1.left_stick_y;
+            tgtPower2 = this.gamepad1.left_stick_x;
 
 
             if(gamepad1.left_stick_x < 0.5 && gamepad1.left_stick_x > -0.5) {
                 //forward and backwards
-                FLW.setPower(-tgtPower);
-                BLW.setPower(-tgtPower);
-                FRW.setPower(tgtPower);
-                BRW.setPower(tgtPower);
-            } else if (gamepad1.left_stick_y < .5 && gamepad1.right_bumper) {
-                FLW.setPower()
+                FLW.setPower(tgtPower);
+                BLW.setPower(tgtPower);
+                FRW.setPower(-tgtPower);
+                BRW.setPower(-tgtPower);
+            } else if (gamepad1.left_stick_y < .5 && gamepad1.left_stick_y > -.5) {
+                FLW.setPower(tgtPower2);
+                BLW.setPower(tgtPower2);
+                FRW.setPower(-tgtPower2);
+                BRW.setPower(-tgtPower2);
             } else {
                 disablePower();
             }
@@ -65,6 +68,7 @@ public class MyFIRSTOpMode extends LinearOpMode {
         telemetry.addData("FRW Power", FRW.getPower());
         telemetry.addData("BRW Power", BRW.getPower());
         telemetry.addData("Status", "Running");
+        telemetry.addData("Left Stick X: ", tgtPower2);
         telemetry.update();
     }
 
