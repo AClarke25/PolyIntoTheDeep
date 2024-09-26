@@ -29,7 +29,7 @@ public class DCOpMode extends LinearOpMode {
     private DcMotor IntakeArm;
     private Servo OutClaw;
     private Servo InClaw;
-    
+
 
     @Override
     public void runOpMode() {
