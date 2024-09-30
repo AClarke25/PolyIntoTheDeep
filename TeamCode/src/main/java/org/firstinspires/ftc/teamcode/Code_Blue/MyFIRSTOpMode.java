@@ -13,7 +13,6 @@ public class MyFIRSTOpMode extends LinearOpMode {
     static private DcMotor BRW;
     static double tgtPower2 = 0;
 
-
     @Override
     public void runOpMode() throws InterruptedException {
         FLW = hardwareMap.get(DcMotor.class, "FLW");
@@ -28,26 +27,34 @@ public class MyFIRSTOpMode extends LinearOpMode {
 
         // run until the end of the match (driver presses STOP)
         while (opModeIsActive()) {
-
-
             telemetry.addData("Status", "Running");
             telemetry.update();
             tgtPower = this.gamepad1.left_stick_y;
             tgtPower2 = this.gamepad1.left_stick_x;
 
-
-            if(gamepad1.left_stick_x < 0.5 && gamepad1.left_stick_x > -0.5) {
+            if(gamepad1.left_stick_y > 0.3 || gamepad1.left_stick_y < -0.3) {
                 //forward and backwards
                 FLW.setPower(tgtPower);
                 BLW.setPower(tgtPower);
                 FRW.setPower(-tgtPower);
                 BRW.setPower(-tgtPower);
-            } else if (gamepad1.left_stick_y < .5 && gamepad1.left_stick_y > -.5) {
-                FLW.setPower(tgtPower2);
-                BLW.setPower(tgtPower2);
+            } else if (gamepad1.left_stick_x > 0.3 || gamepad1.left_stick_x < -0.3) {
+                FLW.setPower(-tgtPower2);
+                BLW.setPower(-tgtPower2);
                 FRW.setPower(-tgtPower2);
                 BRW.setPower(-tgtPower2);
+            } else if (gamepad1.left_bumper) {
+                FLW.setPower(0.5);
+                BLW.setPower(-0.5);
+                FRW.setPower(0.5);
+                BRW.setPower(-0.5);
+            } else if (gamepad1.right_bumper) {
+                FLW.setPower(-0.5);
+                BLW.setPower(0.5);
+                FRW.setPower(-0.5);
+                BRW.setPower(0.5);
             } else {
+
                 disablePower();
             }
             updatePhoneConsole();
@@ -71,5 +78,4 @@ public class MyFIRSTOpMode extends LinearOpMode {
         telemetry.addData("Left Stick X: ", tgtPower2);
         telemetry.update();
     }
-
 }
