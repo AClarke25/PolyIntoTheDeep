@@ -34,6 +34,10 @@ public class MyFIRSTOpMode extends LinearOpMode {
             tgtPower = this.gamepad1.left_stick_y;
             tgtPower2 = this.gamepad1.left_stick_x;
 
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
             if(gamepad1.left_stick_y > 0.3 || gamepad1.left_stick_y < -0.3) {
                 //forward and backwards
                 FLW.setPower(tgtPower);
