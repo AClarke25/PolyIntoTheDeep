@@ -3,6 +3,7 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.*;
 
+
 @TeleOp
 public class MyFIRSTOpMode extends LinearOpMode {
 
@@ -12,6 +13,7 @@ public class MyFIRSTOpMode extends LinearOpMode {
     static private DcMotor FRW;
     static private DcMotor BRW;
     static double tgtPower2 = 0;
+    static boolean stop = false;
 
     @Override
     public void runOpMode() throws InterruptedException {
@@ -31,7 +33,6 @@ public class MyFIRSTOpMode extends LinearOpMode {
             telemetry.update();
             tgtPower = this.gamepad1.left_stick_y;
             tgtPower2 = this.gamepad1.left_stick_x;
-
             if(gamepad1.left_stick_y > 0.3 || gamepad1.left_stick_y < -0.3) {
                 //forward and backwards
                 FLW.setPower(tgtPower);
@@ -53,8 +54,44 @@ public class MyFIRSTOpMode extends LinearOpMode {
                 BLW.setPower(0.5);
                 FRW.setPower(-0.5);
                 BRW.setPower(0.5);
-            } else {
+            } else if (gamepad1.left_trigger > .75 && !stop) {
 
+                new Thread(() -> {
+                    try {
+                        FLW.setPower(.5);
+                        BLW.setPower(-.5);
+                        FRW.setPower(.5);
+                        BRW.setPower(-.5);
+                        Thread.sleep(210);
+                        disablePower();
+
+                        stop = true;
+                        Thread.sleep(1000);
+                        stop = false;
+
+                    } catch(Exception e) {
+
+                    }
+                    }).start();
+
+            } else if (gamepad1.right_trigger > .75 && !stop) {
+
+                new Thread(() -> {
+                    try {
+                        FLW.setPower(-.5);
+                        BLW.setPower(.5);
+                        FRW.setPower(-.5);
+                        BRW.setPower(.5);
+                        Thread.sleep(210);
+                        disablePower();
+
+                        stop = true;
+                        Thread.sleep(1000);
+                        stop = false;
+                    } catch(Exception e) {
+                    }
+                }).start();
+            } else {
                 disablePower();
             }
             updatePhoneConsole();
