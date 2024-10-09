@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: com.acmerobotics.dashboard:dashboard:0.4.16@aar" external-system-id="GRADLE">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/8.9/transforms/2a8b801ac56271921d29d61cfac426fb/transformed/dashboard-0.4.16/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/8.9/transforms/2a8b801ac56271921d29d61cfac426fb/transformed/dashboard-0.4.16/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/8.9/transforms/2a8b801ac56271921d29d61cfac426fb/transformed/dashboard-0.4.16/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.acmerobotics.dashboard/dashboard/0.4.16/b9e0a5402d89d807c37f7e1a82575114e03be004/dashboard-0.4.16-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.acmerobotics.dashboard/dashboard/0.4.16/297a2f10706322e66717d151ed976713b3703537/dashboard-0.4.16-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

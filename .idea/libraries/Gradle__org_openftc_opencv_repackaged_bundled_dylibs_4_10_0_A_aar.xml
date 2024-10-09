@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: org.openftc:opencv-repackaged-bundled-dylibs:4.10.0-A@aar" external-system-id="GRADLE">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/8.9/transforms/3507aa29116b22df209ea81291312055/transformed/opencv-repackaged-bundled-dylibs-4.10.0-A/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/8.9/transforms/3507aa29116b22df209ea81291312055/transformed/opencv-repackaged-bundled-dylibs-4.10.0-A/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/8.9/transforms/3507aa29116b22df209ea81291312055/transformed/opencv-repackaged-bundled-dylibs-4.10.0-A/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openftc/opencv-repackaged-bundled-dylibs/4.10.0-A/7e741b4f0f7702fc6a489c342abe2807e9b0c856/opencv-repackaged-bundled-dylibs-4.10.0-A-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openftc/opencv-repackaged-bundled-dylibs/4.10.0-A/baf9d68aa049cf26cd2b45104bf76b21754d48f/opencv-repackaged-bundled-dylibs-4.10.0-A-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
