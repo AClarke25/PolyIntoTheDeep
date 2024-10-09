@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/PolyIntoTheDeep.iml" filepath="$PROJECT_DIR$/.idea/modules/PolyIntoTheDeep.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/FtcRobotController/PolyIntoTheDeep.FtcRobotController.iml" filepath="$PROJECT_DIR$/.idea/modules/FtcRobotController/PolyIntoTheDeep.FtcRobotController.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/FtcRobotController/PolyIntoTheDeep.FtcRobotController.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/FtcRobotController/PolyIntoTheDeep.FtcRobotController.androidTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/FtcRobotController/PolyIntoTheDeep.FtcRobotController.main.iml" filepath="$PROJECT_DIR$/.idea/modules/FtcRobotController/PolyIntoTheDeep.FtcRobotController.main.iml" />
