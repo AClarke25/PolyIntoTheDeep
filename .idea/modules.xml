@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/PolyIntoTheDeep.iml" filepath="$PROJECT_DIR$/.idea/modules/PolyIntoTheDeep.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/PolyIntoTheDeep.iml" filepath="$PROJECT_DIR$/.idea/PolyIntoTheDeep.iml" />
     </modules>
   </component>
 </project>
