@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <merger version="3"><dataSet config="main" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/Users/thomam28/JetBrains/StudioProjects/PolyIntoTheDeep/TeamCode/src/main/shaders"/></dataSet><dataSet config="debug" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/Users/thomam28/JetBrains/StudioProjects/PolyIntoTheDeep/TeamCode/src/debug/shaders"/></dataSet></merger>
 =======
 <merger version="3"><dataSet config="main" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/Users/exiang/StudioProjects/PolyIntoTheDeep/TeamCode/src/main/shaders"/></dataSet><dataSet config="debug" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/Users/exiang/StudioProjects/PolyIntoTheDeep/TeamCode/src/debug/shaders"/></dataSet></merger>
 >>>>>>> 396a119976cdb86f1ad43ce6671f491dfa92f3bc
+=======
+<merger version="3"><dataSet config="main" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/Users/justin_/Desktop/PolyIntoTheDeep/TeamCode/src/main/shaders"/></dataSet><dataSet config="debug" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/Users/justin_/Desktop/PolyIntoTheDeep/TeamCode/src/debug/shaders"/></dataSet></merger>
+>>>>>>> Stashed changes
