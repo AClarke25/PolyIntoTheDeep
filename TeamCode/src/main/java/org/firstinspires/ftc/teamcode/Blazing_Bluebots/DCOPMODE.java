@@ -9,10 +9,13 @@ import com.qualcomm.robotcore.hardware.Servo;
 @TeleOp
 public class DCOPMODE extends LinearOpMode {
     //motors
+    //wheels
     private DcMotor FLW;
     private DcMotor FRW;
     private DcMotor BLW;
     private DcMotor BRW;
+
+    
 
     private DcMotor IntakeArm;
     private DcMotor VLS;
@@ -40,7 +43,7 @@ public class DCOPMODE extends LinearOpMode {
             moveWheels(gamepad1);
             moveArm(gamepad2);
 
-            //?
+            //println
             telemetry.addData("FLW Motor Power", FLW.getPower());
             telemetry.addData("FRW Motor Power", FRW.getPower());
             telemetry.addData("BLW Motor Power", BLW.getPower());
