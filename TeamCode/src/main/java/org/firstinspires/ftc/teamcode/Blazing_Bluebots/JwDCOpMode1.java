@@ -7,15 +7,16 @@ import com.qualcomm.robotcore.hardware.Gamepad;
 import com.qualcomm.robotcore.hardware.Servo;
 
 @TeleOp
-public class DCOPMODE extends LinearOpMode {
+public class JwDCOpMode1 extends LinearOpMode {
     private DcMotor FLW;
     private DcMotor FRW;
     private DcMotor BLW;
     private DcMotor BRW;
 
-    private DcMotor IntakeArm;
+    
     private DcMotor VLS;
-    private Servo OutClaw;
+    private DcMotor HLS;
+    private Servo Claw;
     private Servo Wrist;
 
     @Override
@@ -26,8 +27,8 @@ public class DCOPMODE extends LinearOpMode {
         BRW = hardwareMap.get(DcMotor.class, "BRW");
 
         VLS = hardwareMap.get(DcMotor.class,"VLS");
-        IntakeArm = hardwareMap.get(DcMotor.class,"IntakeArm");
-        OutClaw = hardwareMap.get(Servo.class,"OutClaw");
+        HLS = hardwareMap.get(DcMotor.class,"HLS");
+        Claw = hardwareMap.get(Servo.class,"Claw");
         Wrist = hardwareMap.get(Servo.class,"Wrist");
 
         telemetry.addData("Status", "Initialized");
@@ -45,8 +46,8 @@ public class DCOPMODE extends LinearOpMode {
             telemetry.addData("BRW Motor Power", BRW.getPower());
 
             telemetry.addData("Outtake Arm Motor Power", VLS.getPower());
-            telemetry.addData("Intake Arm Motor Power", IntakeArm.getPower());
-            telemetry.addData("Outtake Claw Servo Position", OutClaw.getPosition());
+            telemetry.addData("Intake Arm Motor Power", HLS.getPower());
+            telemetry.addData("Outtake Claw Servo Position", Claw.getPosition());
             telemetry.addData("Intake Claw Servo Position", Wrist.getPosition());
 
             telemetry.addData("Status", "Running");
@@ -150,7 +151,7 @@ public class DCOPMODE extends LinearOpMode {
     public void moveArm(Gamepad armpad){
         // ** the functions below are for the polymorphism bot **
         // presets servo positions
-        OutClaw.setPosition(0);
+        Claw.setPosition(0);
         Wrist.setPosition(0);
 
         // powers the robot's (arm) motors using the game pad 2 left joystick
@@ -167,18 +168,18 @@ public class DCOPMODE extends LinearOpMode {
 
         // same logic for intake and outtake linear slides
         if(armpad.right_stick_y > 0.25 || armpad.right_stick_y < -0.25) {
-            IntakeArm.setPower(-armpad.left_stick_y);
+            HLS.setPower(-armpad.left_stick_y);
         } else {
-            IntakeArm.setPower(0);
+            HLS.setPower(0);
         }
 
         // uses the gamepad's X button as a switch to tilt and un-tilt the outtake's "claw's" bucket
         // (1 = tilt, 0 = not tilt)
         if(armpad.x) {
-            if(OutClaw.getPosition() < 0.5) {
-                OutClaw.setPosition(1);
+            if(Claw.getPosition() < 0.5) {
+                Claw.setPosition(1);
             } else {
-                OutClaw.setPosition(0);
+                Claw.setPosition(0);
             }
         }
 

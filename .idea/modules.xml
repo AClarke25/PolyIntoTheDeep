@@ -3,14 +3,14 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/PolyIntoTheDeep.iml" filepath="$PROJECT_DIR$/.idea/modules/PolyIntoTheDeep.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/FtcRobotController/PolyIntoTheDeep.FtcRobotController.iml" filepath="$PROJECT_DIR$/.idea/modules/FtcRobotController/PolyIntoTheDeep.FtcRobotController.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/FtcRobotController/PolyIntoTheDeep.FtcRobotController.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/FtcRobotController/PolyIntoTheDeep.FtcRobotController.androidTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/FtcRobotController/PolyIntoTheDeep.FtcRobotController.main.iml" filepath="$PROJECT_DIR$/.idea/modules/FtcRobotController/PolyIntoTheDeep.FtcRobotController.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/FtcRobotController/PolyIntoTheDeep.FtcRobotController.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/FtcRobotController/PolyIntoTheDeep.FtcRobotController.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/TeamCode/PolyIntoTheDeep.TeamCode.iml" filepath="$PROJECT_DIR$/.idea/modules/TeamCode/PolyIntoTheDeep.TeamCode.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/TeamCode/PolyIntoTheDeep.TeamCode.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/TeamCode/PolyIntoTheDeep.TeamCode.androidTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/TeamCode/PolyIntoTheDeep.TeamCode.main.iml" filepath="$PROJECT_DIR$/.idea/modules/TeamCode/PolyIntoTheDeep.TeamCode.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/TeamCode/PolyIntoTheDeep.TeamCode.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/TeamCode/PolyIntoTheDeep.TeamCode.unitTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/FtcRobotController/StudioProjects.PolyIntoTheDeep.FtcRobotController.iml" filepath="$PROJECT_DIR$/.idea/modules/FtcRobotController/StudioProjects.PolyIntoTheDeep.FtcRobotController.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/TeamCode/StudioProjects.PolyIntoTheDeep.TeamCode.iml" filepath="$PROJECT_DIR$/.idea/modules/TeamCode/StudioProjects.PolyIntoTheDeep.TeamCode.iml" />
     </modules>
   </component>
 </project>

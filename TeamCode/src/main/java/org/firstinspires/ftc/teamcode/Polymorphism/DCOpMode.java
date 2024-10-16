@@ -24,10 +24,10 @@ public class DCOpMode extends LinearOpMode {
     private DcMotor BRW;
 
     // arm parts
-    private DcMotor OuttakeArm;
+    private DcMotor VLS;
     private DcMotor IntakeArm;
     private Servo OutClaw;
-    private Servo InClaw;
+    private Servo Wrist;
 
     @Override
     public void runOpMode() {
@@ -41,10 +41,10 @@ public class DCOpMode extends LinearOpMode {
         BRW = hardwareMap.get(DcMotor.class, "BRW");
 
         // arm config
-        OuttakeArm = hardwareMap.get(DcMotor.class,"OuttakeArm");
+        VLS = hardwareMap.get(DcMotor.class,"VLS");
         IntakeArm = hardwareMap.get(DcMotor.class,"IntakeArm");
         OutClaw = hardwareMap.get(Servo.class,"OutClaw");
-        InClaw = hardwareMap.get(Servo.class,"InClaw");
+        Wrist = hardwareMap.get(Servo.class,"Wrist");
 
         telemetry.addData("Status", "Initialized");
         telemetry.update();
@@ -64,10 +64,10 @@ public class DCOpMode extends LinearOpMode {
             telemetry.addData("BLW Motor Power", BLW.getPower());
             telemetry.addData("BRW Motor Power", BRW.getPower());
 
-            telemetry.addData("Outtake Arm Motor Power", OuttakeArm.getPower());
+            telemetry.addData("Outtake Arm Motor Power", VLS.getPower());
             telemetry.addData("Intake Arm Motor Power", IntakeArm.getPower());
             telemetry.addData("Outtake Claw Servo Position", OutClaw.getPosition());
-            telemetry.addData("Intake Claw Servo Position", InClaw.getPosition());
+            telemetry.addData("Intake Claw Servo Position", Wrist.getPosition());
 
             telemetry.addData("Status", "Running");
             telemetry.update();
@@ -176,7 +176,7 @@ public class DCOpMode extends LinearOpMode {
         // ** the functions below are for the polymorphism bot **
         // presets servo positions
         OutClaw.setPosition(0);
-        InClaw.setPosition(0);
+        Wrist.setPosition(0);
 
         // powers the robot's (arm) motors using the game pad 2 left joystick
         // (this will make the arm's motor power vary depending on how much you're using the joystick.
@@ -185,9 +185,9 @@ public class DCOpMode extends LinearOpMode {
         // linear slide(s) for outtake arm
         // (provides a threshold for deactivating motor power since joystick may not be at exactly 0)
         if(armpad.left_stick_y > 0.25 || armpad.left_stick_y < -0.25) {
-            OuttakeArm.setPower(-armpad.left_stick_y);
+            VLS.setPower(-armpad.left_stick_y);
         } else {
-            OuttakeArm.setPower(0);
+            VLS.setPower(0);
         }
 
         // same logic for intake and outtake linear slides
@@ -210,10 +210,10 @@ public class DCOpMode extends LinearOpMode {
         // uses the gamepad's circle button as a switch to open and unopen the intake's claw
         // (1 = open, 0 = closed)
         if(armpad.circle) {
-            if(InClaw.getPosition() < 0.5) {
-                InClaw.setPosition(1);
+            if(Wrist.getPosition() < 0.5) {
+                Wrist.setPosition(1);
             } else {
-                InClaw.setPosition(0);
+                Wrist.setPosition(0);
             }
         }
 
