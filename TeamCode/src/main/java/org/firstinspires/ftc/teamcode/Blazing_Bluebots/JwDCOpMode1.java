@@ -168,14 +168,14 @@ public class JwDCOpMode1 extends LinearOpMode {
 
         // same logic for intake and outtake linear slides
         if(armpad.right_stick_y > 0.25 || armpad.right_stick_y < -0.25) {
-            HLS.setPower(-armpad.left_stick_y);
+            HLS.setPower(-armpad.right_stick_y);
         } else {
             HLS.setPower(0);
         }
 
         // uses the gamepad's X button as a switch to tilt and un-tilt the outtake's "claw's" bucket
         // (1 = tilt, 0 = not tilt)
-        if(armpad.x) {
+        if(armpad.right_trigger>0.5) {
             if(Claw.getPosition() < 0.5) {
                 Claw.setPosition(1);
             } else {
@@ -185,7 +185,7 @@ public class JwDCOpMode1 extends LinearOpMode {
 
         // uses the gamepad's circle button as a switch to open and unopen the intake's claw
         // (1 = open, 0 = closed)
-        if(armpad.circle) {
+        if(armpad.left_trigger>0.5) {
             if(Wrist.getPosition() < 0.5) {
                 Wrist.setPosition(1);
             } else {

@@ -4,11 +4,7 @@
             "outputFile": "org.firstinspires.ftc.teamcode.TeamCode-mergeDebugResources-17:/values-port/values-port.xml",
             "map": [
                 {
-<<<<<<< Updated upstream
-                    "source": "/Users/exiang/.gradle/caches/transforms-4/b53428b3bf035084d53804b199171ee7/transformed/appcompat-1.2.0/res/values-port/values-port.xml",
-=======
-                    "source": "/Users/justin_/.gradle/caches/transforms-4/b53428b3bf035084d53804b199171ee7/transformed/appcompat-1.2.0/res/values-port/values-port.xml",
->>>>>>> Stashed changes
+                    "source": "/Users/shuhanzhou/.gradle/caches/8.9/transforms/9679d4d1e30490d5bcbdd98dfaf30994/transformed/appcompat-1.2.0/res/values-port/values-port.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
