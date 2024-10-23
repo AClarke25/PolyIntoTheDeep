@@ -6,7 +6,7 @@ import com.qualcomm.robotcore.hardware.*;
 
 @TeleOp
 public class My1OpMode extends LinearOpMode {
-
+    //variables
     static double tgtPower = 0;
     static private DcMotor FLW;
     static private DcMotor BLW;
