@@ -1,9 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: org.firstinspires.ftc:Inspection:10.1.0@aar" external-system-id="GRADLE">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/8.9/transforms/e475acd4c33644093a9dac4622044989/transformed/Inspection-10.1.0/AndroidManifest.xml" />
-      <root url="file://$USER_HOME$/.gradle/caches/8.9/transforms/e475acd4c33644093a9dac4622044989/transformed/Inspection-10.1.0/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/8.9/transforms/e475acd4c33644093a9dac4622044989/transformed/Inspection-10.1.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/8.9/transforms/4b7ec48e7b820491215ef71d8a734277/transformed/Inspection-10.1.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/8.9/transforms/4b7ec48e7b820491215ef71d8a734277/transformed/Inspection-10.1.0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/8.9/transforms/4b7ec48e7b820491215ef71d8a734277/transformed/Inspection-10.1.0/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.firstinspires.ftc/Inspection/10.1.0/5bd41df553195ec1d729471f0373e3e3224a0801/Inspection-10.1.0-javadoc.jar!/" />

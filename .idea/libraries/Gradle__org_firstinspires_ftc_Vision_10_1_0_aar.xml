@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: org.firstinspires.ftc:Vision:10.1.0@aar" external-system-id="GRADLE">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/8.9/transforms/199df505f7cb536b9b9b418bc0c87aea/transformed/Vision-10.1.0/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/8.9/transforms/199df505f7cb536b9b9b418bc0c87aea/transformed/Vision-10.1.0/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/8.9/transforms/2417d4548c1b2b8020f37ceacda132ab/transformed/Vision-10.1.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/8.9/transforms/2417d4548c1b2b8020f37ceacda132ab/transformed/Vision-10.1.0/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.firstinspires.ftc/Vision/10.1.0/90e1cc1bcafcd9f5533ccab6a1a57db5556223cc/Vision-10.1.0-javadoc.jar!/" />
