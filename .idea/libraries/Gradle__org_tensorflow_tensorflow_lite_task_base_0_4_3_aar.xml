@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: org.tensorflow:tensorflow-lite-task-base:0.4.3@aar" external-system-id="GRADLE">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/8.9/transforms/3e666853519f5a40f3645f53305c3a66/transformed/tensorflow-lite-task-base-0.4.3/AndroidManifest.xml" />
       <root url="jar://$USER_HOME$/.gradle/caches/8.9/transforms/3e666853519f5a40f3645f53305c3a66/transformed/tensorflow-lite-task-base-0.4.3/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/8.9/transforms/3e666853519f5a40f3645f53305c3a66/transformed/tensorflow-lite-task-base-0.4.3/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

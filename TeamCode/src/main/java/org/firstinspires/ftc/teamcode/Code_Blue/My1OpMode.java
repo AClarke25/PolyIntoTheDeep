@@ -12,6 +12,8 @@ public class My1OpMode extends LinearOpMode {
     static private DcMotor BLW;
     static private DcMotor FRW;
     static private DcMotor BRW;
+    static private DcMotor ArmL;
+    static private DcMotor ArmR;
     static double tgtPower2 = 0;
     static boolean stop = false;
 
@@ -21,6 +23,9 @@ public class My1OpMode extends LinearOpMode {
         BLW = hardwareMap.get(DcMotor.class, "BLW");
         BRW = hardwareMap.get(DcMotor.class, "BRW");
         FRW = hardwareMap.get(DcMotor.class, "FRW");
+        ArmL = hardwareMap.get(DcMotor.class, "ArmL");
+        ArmR = hardwareMap.get(DcMotor.class, "ArmR");
+
 
         telemetry.addData("Status", "Initialized");
         telemetry.update();
@@ -63,7 +68,7 @@ public class My1OpMode extends LinearOpMode {
                         FRW.setPower(.5);
                         BRW.setPower(-.5);
                         Thread.sleep(210);
-                        disablePower();
+                        disablePowerWheels();
 
                         stop = true;
                         Thread.sleep(1000);
@@ -83,7 +88,7 @@ public class My1OpMode extends LinearOpMode {
                         FRW.setPower(-.5);
                         BRW.setPower(.5);
                         Thread.sleep(210);
-                        disablePower();
+                        disablePowerWheels();
 
                         stop = true;
                         Thread.sleep(1000);
@@ -92,13 +97,22 @@ public class My1OpMode extends LinearOpMode {
                     }
                 }).start();
             } else {
-                disablePower();
+                disablePowerWheels();
+            }
+
+            //arm
+            if(gamepad1.right_stick_y > 0.5){
+                ArmL.setPower(.5);
+                ArmR.setPower(-.5);
+            }else if(gamepad1.right_stick_y < -0.5) {
+                ArmL.setPower(-.5);
+                ArmR.setPower(.5);
             }
             updatePhoneConsole();
         }
     }
 
-    public static void disablePower() {
+    public static void disablePowerWheels() {
         FLW.setPower(0);
         BLW.setPower(0);
         FRW.setPower(0);

@@ -1,9 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: org.firstinspires.ftc:Blocks:10.1.0@aar" external-system-id="GRADLE">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/8.9/transforms/e81fe007913bfa3e8a3ee1ab250cef1d/transformed/Blocks-10.1.0/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/8.9/transforms/e81fe007913bfa3e8a3ee1ab250cef1d/transformed/Blocks-10.1.0/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/8.9/transforms/e81fe007913bfa3e8a3ee1ab250cef1d/transformed/Blocks-10.1.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/8.9/transforms/e81fe007913bfa3e8a3ee1ab250cef1d/transformed/Blocks-10.1.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/8.9/transforms/e81fe007913bfa3e8a3ee1ab250cef1d/transformed/Blocks-10.1.0/res" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.firstinspires.ftc/Blocks/10.1.0/5f11e0b4fb73554a6e00f5e15bbf2134492c6ce5/Blocks-10.1.0-javadoc.jar!/" />

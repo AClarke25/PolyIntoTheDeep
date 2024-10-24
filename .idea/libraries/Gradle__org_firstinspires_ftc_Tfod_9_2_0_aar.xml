@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: org.firstinspires.ftc:Tfod:9.2.0@aar" external-system-id="GRADLE">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/8.9/transforms/e4631baf900ff4690674c4c1e0df3fd2/transformed/Tfod-9.2.0/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/8.9/transforms/e4631baf900ff4690674c4c1e0df3fd2/transformed/Tfod-9.2.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/8.9/transforms/e4631baf900ff4690674c4c1e0df3fd2/transformed/Tfod-9.2.0/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.firstinspires.ftc/Tfod/9.2.0/e7143ae3b4bdcd54a116f2c680e6740f40ccb07d/Tfod-9.2.0-javadoc.jar!/" />

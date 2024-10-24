@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: org.openftc:opencv-repackaged-bundled-dylibs:4.10.0-A@aar" external-system-id="GRADLE">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/8.9/transforms/28b7db9832dbebc3f7e6816d828e2410/transformed/opencv-repackaged-bundled-dylibs-4.10.0-A/res" />
       <root url="jar://$USER_HOME$/.gradle/caches/8.9/transforms/28b7db9832dbebc3f7e6816d828e2410/transformed/opencv-repackaged-bundled-dylibs-4.10.0-A/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/8.9/transforms/28b7db9832dbebc3f7e6816d828e2410/transformed/opencv-repackaged-bundled-dylibs-4.10.0-A/res" />
       <root url="file://$USER_HOME$/.gradle/caches/8.9/transforms/28b7db9832dbebc3f7e6816d828e2410/transformed/opencv-repackaged-bundled-dylibs-4.10.0-A/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC>

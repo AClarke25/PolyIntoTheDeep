@@ -1,10 +1,10 @@
 <component name="libraryTable">
   <library name="Gradle: org.firstinspires.ftc:OnBotJava:9.2.0@aar" external-system-id="GRADLE">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/8.9/transforms/7c40c14d6648d626978e7161f55f342a/transformed/OnBotJava-9.2.0/jars/libs/javac.jar!/" />
       <root url="jar://$USER_HOME$/.gradle/caches/8.9/transforms/7c40c14d6648d626978e7161f55f342a/transformed/OnBotJava-9.2.0/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/8.9/transforms/7c40c14d6648d626978e7161f55f342a/transformed/OnBotJava-9.2.0/AndroidManifest.xml" />
       <root url="file://$USER_HOME$/.gradle/caches/8.9/transforms/7c40c14d6648d626978e7161f55f342a/transformed/OnBotJava-9.2.0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/8.9/transforms/7c40c14d6648d626978e7161f55f342a/transformed/OnBotJava-9.2.0/jars/libs/javac.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/8.9/transforms/7c40c14d6648d626978e7161f55f342a/transformed/OnBotJava-9.2.0/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.firstinspires.ftc/OnBotJava/9.2.0/8412db07400f854a3518be11cb7976cfd7b355d0/OnBotJava-9.2.0-javadoc.jar!/" />
