@@ -120,13 +120,16 @@ public class My1OpMode extends LinearOpMode {
     }
 
     public void updatePhoneConsole() {
+        telemetry.addData("Status", "Running");
         telemetry.addData("Target Power", tgtPower);
         telemetry.addData("FLW Power", FLW.getPower());
         telemetry.addData("BLW Power", BLW.getPower());
         telemetry.addData("FRW Power", FRW.getPower());
         telemetry.addData("BRW Power", BRW.getPower());
-        telemetry.addData("Status", "Running");
+        telemetry.addData("ArmL Power", ArmL.getPower());
+        telemetry.addData("ArmR Power", ArmR.getPower());
         telemetry.addData("Left Stick X: ", tgtPower2);
+        telemetry.addData("Left Stick Y", tgtPower);
         telemetry.update();
     }
 }
