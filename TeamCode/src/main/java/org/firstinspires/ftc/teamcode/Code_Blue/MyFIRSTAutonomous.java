@@ -1,7 +1,10 @@
 package org.firstinspires.ftc.teamcode.Code_Blue;
+import com.qualcomm.hardware.dfrobot.HuskyLens;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.*;
+import com.qualcomm.robotcore.util.ElapsedTime;
+
 
 @Autonomous
 public class MyFIRSTAutonomous extends LinearOpMode {
@@ -10,6 +13,8 @@ public class MyFIRSTAutonomous extends LinearOpMode {
     static private DcMotor BLW;
     static private DcMotor FRW;
     static private DcMotor BRW;
+    private ElapsedTime myElapsedTime = new ElapsedTime();
+    static private HuskyLens Camera;
 
     @Override
     public void runOpMode() throws InterruptedException {
@@ -17,15 +22,17 @@ public class MyFIRSTAutonomous extends LinearOpMode {
         BLW = hardwareMap.get(DcMotor.class, "BLW");
         BRW = hardwareMap.get(DcMotor.class, "BRW");
         FRW = hardwareMap.get(DcMotor.class, "FRW");
+        Camera = hardwareMap.get(HuskyLens.class, "Camera");
+        Camera.selectAlgorithm(HuskyLens.Algorithm.TAG_RECOGNITION);
 
         telemetry.addData("Status", "Initialized");
         telemetry.update();
         // Wait for the game to start (driver presses PLAY)
         waitForStart();
+        myElapsedTime.reset();
 
         // run until the end of the match (driver presses STOP)
         while (opModeIsActive()) {
-            powerWheels(2000, "forward");
             updatePhoneConsole();
         }
     }
@@ -84,6 +91,7 @@ public class MyFIRSTAutonomous extends LinearOpMode {
         telemetry.addData("FRW Power", FRW.getPower());
         telemetry.addData("BRW Power", BRW.getPower());
         telemetry.addData("Status", "Running");
+        telemetry.addData(">", "Touch start to continue");
         telemetry.update();
     }
 }
