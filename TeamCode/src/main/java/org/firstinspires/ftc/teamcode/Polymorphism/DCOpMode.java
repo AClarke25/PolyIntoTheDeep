@@ -1,8 +1,5 @@
 package org.firstinspires.ftc.teamcode.Polymorphism;
 
-//test test
-// test test test
-
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
@@ -11,37 +8,39 @@ import com.qualcomm.robotcore.hardware.Servo;
 
 // annotation used to differentiate TeleOp and Auto modes
 // (i guess it just mainly changes the tab it appears in on the controller??)
+
 @TeleOp
 public class DCOpMode extends LinearOpMode {
-    // ** add private variables/robo parts later
-    // placeholder robo parts for now
+    // ** add private variables/robot parts later
+    // placeholder robot parts for now
 
-    // wheel parts
-    // (F = Front, B = Back, L = Left, R = Right, W = Wheel)
-    private DcMotor FLW;
-    private DcMotor FRW;
-    private DcMotor BLW;
-    private DcMotor BRW;
+    // wheel parts labelled VERY CLEARLY
+    private DcMotor LeftFrontWheel;
+    private DcMotor RightFrontWheel;
+    private DcMotor LeftBackWheel;
+    private DcMotor RightBackWheel;
 
     // arm parts
-    private DcMotor VLS;
+    private DcMotor VertLSlide;
+    private DcMotor HorzLSlide;
     private DcMotor IntakeArm;
-    private Servo OutClaw;
-    private Servo Wrist;
+    private Servo ClawFlip;
+    private Servo ClawRotate;
+    private Servo ClawOpen;
 
     @Override
     public void runOpMode() {
-        // ** set the robo parts to the corresponding "hardwareMap.get" values later
-        // placeholder robo parts for now
+        // ** set the robot parts to the corresponding "hardwareMap.get" values later
+        // placeholder robot parts for now
 
         // wheel config
-        FLW = hardwareMap.get(DcMotor.class, "FLW");
-        FRW = hardwareMap.get(DcMotor.class, "FRW");
-        BLW = hardwareMap.get(DcMotor.class, "BLW");
-        BRW = hardwareMap.get(DcMotor.class, "BRW");
+        LeftFrontWheel = hardwareMap.get(DcMotor.class, "LeftFrontWheel");
+        RightFrontWheel = hardwareMap.get(DcMotor.class, "RightFrontWheel");
+        LeftBackWheel = hardwareMap.get(DcMotor.class, "LeftBackWheel");
+        RightBackWheel = hardwareMap.get(DcMotor.class, "RightBackWheel");
 
         // arm config
-        VLS = hardwareMap.get(DcMotor.class,"VLS");
+        VertLSlide = hardwareMap.get(DcMotor.class,"VertLSlide");
         IntakeArm = hardwareMap.get(DcMotor.class,"IntakeArm");
         OutClaw = hardwareMap.get(Servo.class,"OutClaw");
         Wrist = hardwareMap.get(Servo.class,"Wrist");
@@ -59,12 +58,12 @@ public class DCOpMode extends LinearOpMode {
             moveWheels(gamepad1);
             moveArm(gamepad2);
 
-            telemetry.addData("FLW Motor Power", FLW.getPower());
-            telemetry.addData("FRW Motor Power", FRW.getPower());
-            telemetry.addData("BLW Motor Power", BLW.getPower());
-            telemetry.addData("BRW Motor Power", BRW.getPower());
+            telemetry.addData("LeftFrontWheel Motor Power", LeftFrontWheel.getPower());
+            telemetry.addData("RightFrontWheel Motor Power", RightFrontWheel.getPower());
+            telemetry.addData("LeftBackWheel Motor Power", LeftBackWheel.getPower());
+            telemetry.addData("RightBackWheel Motor Power", RightBackWheel.getPower());
 
-            telemetry.addData("Outtake Arm Motor Power", VLS.getPower());
+            telemetry.addData("Outtake Arm Motor Power", VertLSlide.getPower());
             telemetry.addData("Intake Arm Motor Power", IntakeArm.getPower());
             telemetry.addData("Outtake Claw Servo Position", OutClaw.getPosition());
             telemetry.addData("Intake Claw Servo Position", Wrist.getPosition());
@@ -96,41 +95,41 @@ public class DCOpMode extends LinearOpMode {
             if(turnPower != 0){
                 // ** recheck this
                 //Drive and Turn
-                FRW.setPower(drivePower);
-                FLW.setPower(turnPower);
-                BRW.setPower(drivePower);
-                BLW.setPower(turnPower);
+                RightFrontWheel.setPower(drivePower);
+                LeftFrontWheel.setPower(turnPower);
+                RightBackWheel.setPower(drivePower);
+                LeftBackWheel.setPower(turnPower);
             } else if(strafePower  != 0){
                 // ** recheck this
                 //Drive and Strafe
-                FLW.setPower(drivePower);
-                FRW.setPower(-strafePower);
-                BLW.setPower(-strafePower);
-                BRW.setPower(drivePower);
+                LeftFrontWheel.setPower(drivePower);
+                RightFrontWheel.setPower(-strafePower);
+                LeftBackWheel.setPower(-strafePower);
+                RightBackWheel.setPower(drivePower);
             } else {
                 // just driving
-                FRW.setPower(drivePower);
-                FLW.setPower(drivePower);
-                BRW.setPower(drivePower);
-                BLW.setPower(drivePower);
+                RightFrontWheel.setPower(drivePower);
+                LeftFrontWheel.setPower(drivePower);
+                RightBackWheel.setPower(drivePower);
+                LeftBackWheel.setPower(drivePower);
             }
         } else if(turnPower != 0){
             // just turning
-            FLW.setPower(turnPower);
-            FRW.setPower(-turnPower);
-            BLW.setPower(turnPower);
-            BRW.setPower(-turnPower);
+            LeftFrontWheel.setPower(turnPower);
+            RightFrontWheel.setPower(-turnPower);
+            LeftBackWheel.setPower(turnPower);
+            RightBackWheel.setPower(-turnPower);
         } else if(strafePower != 0){
             // just strafing
-            FLW.setPower(strafePower);
-            FRW.setPower(-strafePower);
-            BLW.setPower(-strafePower);
-            BRW.setPower(strafePower);
+            LeftFrontWheel.setPower(strafePower);
+            RightFrontWheel.setPower(-strafePower);
+            LeftBackWheel.setPower(-strafePower);
+            RightBackWheel.setPower(strafePower);
         } else {
-            FRW.setPower(0);
-            FLW.setPower(0);
-            BRW.setPower(0);
-            BLW.setPower(0);
+            RightFrontWheel.setPower(0);
+            LeftFrontWheel.setPower(0);
+            RightBackWheel.setPower(0);
+            LeftBackWheel.setPower(0);
         }
 
 
@@ -152,22 +151,22 @@ public class DCOpMode extends LinearOpMode {
             // driving and strafing
             if(drivePower != 0 && strafePower != 0){
                 // im not exactly sure if this will work, i just copied it from last year's code
-                FRW.setPower(-strafePower);
-                FLW.setPower(drivePower);
-                BRW.setPower(drivePower);
-                BLW.setPower(-strafePower);
+                RightFrontWheel.setPower(-strafePower);
+                LeftFrontWheel.setPower(drivePower);
+                RightBackWheel.setPower(drivePower);
+                LeftBackWheel.setPower(-strafePower);
                 // just driving
             } if(drivePower != 0){
-                FLW.setPower(drivePower);
-                FRW.setPower(drivePower);
-                BLW.setPower(drivePower);
-                BRW.setPower(drivePower);
+                LeftFrontWheel.setPower(drivePower);
+                RightFrontWheel.setPower(drivePower);
+                LeftBackWheel.setPower(drivePower);
+                RightBackWheel.setPower(drivePower);
             }
         } else {
-            FLW.setPower(0);
-            FRW.setPower(0);
-            BLW.setPower(0);
-            BRW.setPower(0);
+            LeftFrontWheel.setPower(0);
+            RightFrontWheel.setPower(0);
+            LeftBackWheel.setPower(0);
+            RightBackWheel.setPower(0);
         }
         */
     }
@@ -185,9 +184,9 @@ public class DCOpMode extends LinearOpMode {
         // linear slide(s) for outtake arm
         // (provides a threshold for deactivating motor power since joystick may not be at exactly 0)
         if(armpad.left_stick_y > 0.25 || armpad.left_stick_y < -0.25) {
-            VLS.setPower(-armpad.left_stick_y);
+            VertLSlide.setPower(-armpad.left_stick_y);
         } else {
-            VLS.setPower(0);
+            VertLSlide.setPower(0);
         }
 
         // same logic for intake and outtake linear slides
